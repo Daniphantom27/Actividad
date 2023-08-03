@@ -22,6 +22,9 @@ public class MainActivity2 extends AppCompatActivity {
     private EditText SueldoBase;
     private EditText DiasLab;
     CheckBox descuento;
+    CheckBox salud;
+    CheckBox pension;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -37,6 +40,9 @@ public class MainActivity2 extends AppCompatActivity {
         cargo = findViewById(R.id.cargo);
         SueldoBase = findViewById(R.id.sueldoB);
         DiasLab = findViewById(R.id.Diaslab);
+       CheckBox descuento = findViewById(R.id.descuento);
+       CheckBox salud = findViewById(R.id.salud);
+       CheckBox pension = findViewById(R.id.pension);
 
         Intent primera = new Intent(this, MainActivity.class);
 
@@ -55,7 +61,10 @@ public class MainActivity2 extends AppCompatActivity {
                 String valorCargo = cargo.getText().toString();
                 String valorSueldoBase = SueldoBase.getText().toString();
                 String valorDiasLab = DiasLab.getText().toString();
-                int DescuentoT =0;
+                boolean valorDescuento = descuento.isChecked();
+                boolean valorSalud = salud.isChecked();
+                boolean valorPension = pension.isChecked();
+
 
                 Intent datos = new Intent(MainActivity2.this, MainActivity3.class);
                 datos.putExtra("nombre", valorNombre);
@@ -63,14 +72,12 @@ public class MainActivity2 extends AppCompatActivity {
                 datos.putExtra("cargo", valorCargo);
                 datos.putExtra("sueldo", valorSueldoBase);
                 datos.putExtra("diasLab", valorDiasLab);
+                datos.putExtra("descuento", valorDescuento);
+                datos.putExtra("salud", valorSalud);
+                datos.putExtra("pension", valorPension);
 
                 startActivity(datos);
             }
         });
-        descuento = findViewById(R.id.descuento);
-        SueldoBase = findViewById(R.id.sueldoB);
-
-
-
     }
 }
