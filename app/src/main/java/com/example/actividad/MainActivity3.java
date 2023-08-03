@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 public class MainActivity3 extends AppCompatActivity {
     private TextView traerNombre;
-    private TextView traerApellido;
     private TextView traerCargo;
     private TextView traerSueldo;
     private TextView traerDias;
@@ -43,49 +42,30 @@ public class MainActivity3 extends AppCompatActivity {
 
         int subtotal = valorxdias * diasInt;
 
+
         double DescuentoX = 0;
-        double DescuentoT = 0;
+
         if (datoDescuento) {
-            DescuentoX = subtotal * 0.04;
-            DescuentoT = subtotal  - DescuentoX;
+            DescuentoX += subtotal * 0.03;
         }
 
-        double SaludX = 0;
-        double SaludT = 0;
         if (datoSalud) {
-            SaludX = subtotal * 0.04;
-            SaludT = subtotal  - SaludX;
+            DescuentoX += subtotal * 0.04;
         }
 
-        double PensionX = 0;
-        double PensionT = 0;
         if (datoPension) {
-            PensionX = subtotal * 0.04;
-            PensionT = subtotal  - PensionX;
+            DescuentoX += subtotal * 0.04;
         }
 
         double SueldoNeto = 0;
-        if (datoDescuento && datoSalud && datoPension) {
-            SueldoNeto = (subtotal) - (DescuentoT + SaludT + PensionT);
 
-        } else if (datoDescuento && datoSalud) {
-            SueldoNeto = (subtotal) - (DescuentoT + SaludT);
+        SueldoNeto = subtotal - DescuentoX;
 
-        } else if (datoDescuento && datoPension) {
-            SueldoNeto = (subtotal) - (DescuentoT + PensionT);
-
-        } else if (datoSalud && datoPension) {
-            SueldoNeto = (subtotal) - (SaludT + PensionT);
-            ;
-        }
 
 
 
         traerNombre = findViewById(R.id.traeNombre);
-        traerNombre.setText(datoNombre);
-
-        traerApellido = findViewById(R.id.TraeApellido);
-        traerApellido.setText(datoApellido);
+        traerNombre.setText(datoNombre +" "+ datoApellido);
 
         traerCargo = findViewById(R.id.traeCargo);
         traerCargo.setText(datoCargo);
@@ -104,9 +84,7 @@ public class MainActivity3 extends AppCompatActivity {
         String resultadoSubtotal = Integer.toString(subtotal);
         Subtotal.setText("Subtotal: " + resultadoSubtotal);
 
-        traerPrueba = findViewById(R.id.pruebita);
+        traerPrueba = findViewById(R.id.descuentoX);
         traerPrueba.setText("Sueldo Neto: " + SueldoNeto);
-
-
     }
 }

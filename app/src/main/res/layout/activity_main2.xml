@@ -171,31 +171,31 @@
         android:id="@+id/descuento"
         android:layout_width="114dp"
         android:layout_height="47dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="530dp"
         android:text="Descuento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/salud"
         android:layout_width="80dp"
         android:layout_height="0dp"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="530dp"
         android:text="Salud"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText11" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/pension"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="530dp"
         android:text="Pensión"
-        app:layout_constraintStart_toEndOf="@+id/salud"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText11" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
